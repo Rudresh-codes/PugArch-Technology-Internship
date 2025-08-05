@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Responsive Landing Page</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">MyBrand</a>
+            <ul class="nav-links">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="hero" class="hero">
+        <div class="overlay">
+            <h1>Welcome to MyBrand</h1>
+            <p>Your journey to excellence begins here. We craft innovative digital solutions for your business.</p>
+            <a href="#features" class="btn">Explore Features</a>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <h2>Our Features</h2>
+        <p class="section-intro">Everything you need to boost productivity and grow your business efficiently.</p>
+        <div class="features-grid">
+            <div class="feature-item">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="64" height="64" rx="12" fill="#E0F7FA" />
+                    <path d="M23 32a5 5 0 015-5h8a5 5 0 010 10h-8a5 5 0 01-5-5z" stroke="#0077CC" stroke-width="2"
+                        fill="#ffffff" />
+                    <path d="M20 22a10 10 0 0110-10h4a10 10 0 010 20h-4" stroke="#00AACC" stroke-width="2"
+                        stroke-linecap="round" />
+                    <path d="M44 42a10 10 0 01-10 10h-4a10 10 0 010-20h4" stroke="#00AACC" stroke-width="2"
+                        stroke-linecap="round" />
+                </svg>
+
+                <h3>Seamless Integration</h3>
+                <p>Easily connect with the tools you already use, enabling a smooth workflow without interruptions.</p>
+            </div>
+            <div class="feature-item">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="64" height="64" rx="12" fill="#F1F8E9" />
+                    <!-- Grid Boxes -->
+                    <rect x="14" y="14" width="12" height="12" rx="2" fill="#8BC34A" />
+                    <rect x="28" y="14" width="22" height="12" rx="2" fill="#C5E1A5" />
+                    <rect x="14" y="28" width="22" height="12" rx="2" fill="#AED581" />
+                    <!-- Bar Chart -->
+                    <rect x="40" y="28" width="10" height="6" rx="1" fill="#7CB342" />
+                    <rect x="40" y="36" width="6" height="8" rx="1" fill="#558B2F" />
+                    <rect x="40" y="46" width="14" height="4" rx="1" fill="#33691E" />
+                </svg>
+
+                <h3>Customizable Dashboards</h3>
+                <p>Personalize your workspace with drag-and-drop widgets and data visualizations that fit your needs.
+                </p>
+            </div>
+            <div class="feature-item">
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="64" height="64" rx="12" fill="#EDE7F6"/>
+  
+  <!-- Headset band -->
+  <path d="M20 32a12 12 0 0124 0v8a4 4 0 01-4 4h-2v-4h2v-8a8 8 0 00-16 0v8h2v4h-2a4 4 0 01-4-4v-8z" fill="#673AB7"/>
+
+  <!-- Earpieces -->
+  <rect x="14" y="30" width="6" height="10" rx="2" fill="#9575CD"/>
+  <rect x="44" y="30" width="6" height="10" rx="2" fill="#9575CD"/>
+
+  <!-- Mic boom -->
+  <path d="M32 46h4a4 4 0 004 4h4" stroke="#512DA8" stroke-width="2" stroke-linecap="round"/>
+
+  <!-- Clock (24/7) -->
+  <circle cx="50" cy="14" r="6" fill="#D1C4E9"/>
+  <path d="M50 14v-2" stroke="#512DA8" stroke-width="2" stroke-linecap="round"/>
+  <path d="M50 14l2 2" stroke="#512DA8" stroke-width="2" stroke-linecap="round"/>
+</svg>
+
+                <h3>24/7 Support</h3>
+                <p>Our dedicated support team is always available to help you resolve any issues quickly.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>At MyBrand, we're a passionate team of developers, designers, and strategists dedicated to creating impactful
+            digital experiences that drive results.</p>
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="images/joe.jpg" alt="Jane Doe - CEO" />
+                <h4>Jane Doe</h4>
+                <p>CEO & Founder</p>
+            </div>
+            <div class="team-member">
+                <img src="images/john.jpg" alt="John Smith - Lead Developer" />
+                <h4>John Smith</h4>
+                <p>Lead Developer</p>
+            </div>
+            <div class="team-member">
+                <img src="images/team3.jpg" alt="Anna Lee - UX Designer" />
+                <h4>Anna Lee</h4>
+                <p>UX Designer</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <p>Have questions or want to get started? Send us a message and we’ll get back to you shortly.</p>
+        <form>
+            <input type="text" placeholder="Your Name" required />
+            <input type="email" placeholder="Your Email" required />
+            <textarea placeholder="Your Message" rows="5" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 MyBrand. All rights reserved.</p>
+        <div class="socials">
+            <a href="#" aria-label="Twitter">Twitter</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+            <a href="#" aria-label="GitHub">GitHub</a>
+        </div>
+    </footer>
+
+    <!-- Mobile menu toggle script -->
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+</body>
+
+</html>
