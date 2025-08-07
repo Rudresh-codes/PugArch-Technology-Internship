@@ -5,22 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather App</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <h1>Weather App</h1>
-        <input type="text" id="city-input" placeholder="Enter city name">
-        <button id="get-weather">Get Weather</button>
-        <div id="weather-info">
-            <h2 id="city-name"></h2>
-            <p id="temperature"></p>
-            <p id="weather-description"></p>
+    <div class="weather-bg">
+        <div class="weather-card">
+            <h1 class="app-title">🌤️ Weather App</h1>
+            <div class="input-group">
+                <input type="text" id="city-input" placeholder="Enter city name">
+                <button id="get-weather">Get Weather</button>
+            </div>
+            <div id="weather-info" class="weather-info">
+                <h2 id="city-name"></h2>
+                <p id="temperature"></p>
+                <p id="weather-description"></p>
+            </div>
         </div>
-    </div>
- <div>
-        <a href="https://github.com/Rudresh-codes/PugArch-Technology-Internship/tree/main/Javascript/Weather%20api" target="_blank">Github link to this page</a>
+        <footer>
+            <a href="https://github.com/Rudresh-codes/PugArch-Technology-Internship/tree/main/Javascript/Weather%20api" target="_blank">🌐 Github link to this page</a>
+        </footer>
     </div>
     <script src="script.js"></script>
 </body>
-
 </html>
