@@ -1,0 +1,32 @@
+[
+  {
+    "id": "1",
+    "title": "React Workshop",
+    "description": "Learn React basics.",
+    "date": "2025-09-01",
+    "time": "10:00",
+    "location": "Mumbai",
+    "category": "Tech",
+    "bannerImage": "/images/react.png",
+    "organizingCommittee": {
+      "name": "Tech Society",
+      "contact": "techsociety@email.com",
+      "website": "https://techsociety.com"
+    }
+  },
+  {
+    "id": "2",
+    "title": "Music Night",
+    "description": "Live music event.",
+    "date": "2025-09-10",
+    "time": "19:00",
+    "location": "Pune",
+    "category": "Music",
+    "bannerImage": "/images/music.png",
+    "organizingCommittee": {
+      "name": "Tech Society",
+      "contact": "techsociety@email.com",
+      "website": "https://techsociety.com"
+    }
+  }
+]
