@@ -6,7 +6,7 @@ const Footer = () => (
       &copy; {new Date().getFullYear()} EventHub. All rights reserved.
     </p>
         <a
-      href="https://github.com/your-github-username/eventhub"
+      href="https://github.com/Rudresh-codes/PugArch-Technology-Internship/tree/main/eventhub"
       target="_blank"
       rel="noopener noreferrer"
       className="text-blue-400 underline text-xs block mt-2"
@@ -15,5 +15,6 @@ const Footer = () => (
     </a>
   </footer>
 );
+
 
 export default Footer;
