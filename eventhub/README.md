@@ -15,7 +15,7 @@ Built with **Next.js** and styled using **Tailwind CSS**.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/eventhub.git
+git clone https://github.com/Rudresh-codes/PugArch-Technology-Internship/tree/main/eventhub
 cd eventhub
 ```
 
