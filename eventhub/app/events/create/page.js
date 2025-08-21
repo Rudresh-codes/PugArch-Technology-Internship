@@ -1,5 +1,6 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 
 const categories = [
   "Technical",
@@ -28,15 +29,7 @@ export default function CreateEventPage() {
     }
   });
   const [success, setSuccess] = useState(false);
-
-  // Load old events from localStorage
-  const getEvents = () => {
-    if (typeof window !== "undefined") {
-      const stored = localStorage.getItem("events");
-      return stored ? JSON.parse(stored) : [];
-    }
-    return [];
-  };
+  const router = useRouter();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -57,50 +50,44 @@ export default function CreateEventPage() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    let events = getEvents();
-
-    // Assign a new incremental ID
-    const newId = events.length > 0 ? events[events.length - 1].id + 1 : 1;
-    const newEvent = { id: newId, ...form };
-
-    events.push(newEvent);
-    localStorage.setItem("events", JSON.stringify(events));
-
-    setSuccess(true);
-    setForm({
-      title: "",
-      description: "",
-      date: "",
-      time: "",
-      location: "",
-      category: "",
-      bannerImage: "",
-      organizingCommittee: {
-        name: "",
-        contact: "",
-        website: ""
-      }
+    const res = await fetch("/api/events", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(form)
     });
+    if (res.ok) {
+      setSuccess(true);
+      setForm({
+        title: "",
+        description: "",
+        date: "",
+        time: "",
+        location: "",
+        category: "",
+        bannerImage: "",
+        organizingCommittee: {
+          name: "",
+          contact: "",
+          website: ""
+        }
+      });
 
-    setTimeout(() => setSuccess(false), 3000); // hide message after 3s
+      // ✅ Redirect to events page after 1s (so user briefly sees success)
+      setTimeout(() => {
+        router.push("/events");
+      }, 1000);
+    }
   };
 
   return (
     <main className="max-w-xl mx-auto py-10 px-4">
-      <h1 className="text-2xl font-bold mb-6 text-blue-400 text-center">
-        Create Event
-      </h1>
+      <h1 className="text-2xl font-bold mb-6 text-blue-400 text-center">Create Event</h1>
       {success && (
-        <div className="mb-4 text-green-400 text-center">
-          Event created successfully!
-        </div>
+        <div className="mb-4 text-green-400 text-center">Event created successfully!</div>
       )}
-      <form
-        onSubmit={handleSubmit}
-        className="space-y-4 bg-black p-6 rounded-lg shadow-lg border border-gray-800"
-      >
+      <form onSubmit={handleSubmit} className="space-y-4 bg-black p-6 rounded-lg shadow-lg border border-gray-800">
         <input
           className="w-full p-2 rounded bg-gray-900 text-gray-200"
           type="text"
@@ -126,6 +113,7 @@ export default function CreateEventPage() {
           onChange={handleChange}
           required
           min={new Date().toISOString().split("T")[0]}
+          title="Select the event date"
         />
         <input
           className="w-full p-2 rounded bg-gray-900 text-gray-200"
@@ -134,6 +122,10 @@ export default function CreateEventPage() {
           value={form.time}
           onChange={handleChange}
           required
+          step="60"
+          min="00:00"
+          max="23:59"
+          title="Enter time in 24-hour format (HH:MM)"
         />
         <input
           className="w-full p-2 rounded bg-gray-900 text-gray-200"
@@ -153,9 +145,7 @@ export default function CreateEventPage() {
         >
           <option value="">Select Category</option>
           {categories.map((cat) => (
-            <option key={cat} value={cat}>
-              {cat}
-            </option>
+            <option key={cat} value={cat}>{cat}</option>
           ))}
         </select>
         <input
@@ -179,7 +169,7 @@ export default function CreateEventPage() {
           className="w-full p-2 rounded bg-gray-900 text-gray-200"
           type="text"
           name="organizingCommittee.contact"
-          placeholder="Committee Contact Email"
+          placeholder="Committee Contact email"
           value={form.organizingCommittee.contact}
           onChange={handleChange}
         />
